@@ -127,4 +127,22 @@ class CalculatorTest {
         assertEquals(expected, actual);
 
     }
+    // 1. neuer roter Test
+    @Test
+        @DisplayName("should display the latest value before equalsKey")
+        void testLatestValue(){
+
+            Calculator calc = new Calculator();
+
+            calc.pressDigitKey(9);
+            calc.pressDigitKey(6);
+            calc.pressEqualsKey();
+
+            String expected = "96";
+            String actual = calc.readScreen();
+
+            assertEquals(expected, actual);
+    }
+
 }
+
